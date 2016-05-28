@@ -54,5 +54,8 @@ setopt prompt_subst
 
 # Initialize fasd
 # eval "$(fasd --init auto)"
+
 # Initialize antigen-hs
+ANTIGEN_HS_OUt="/Index/keith/Settings/zsh/antigen-hs"
+ANTIGEN_HS_MY="/Index/keith/Settings/zsh/MyAntigen.hs"
 source /Index/keith/Settings/zsh/antigen-hs/init.zsh
