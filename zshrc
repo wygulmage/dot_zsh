@@ -12,6 +12,9 @@ AUTO_MENU="true" # Cycle through completions.
 # Use vim key bindings
 bindkey -v
 
+# Backspace deletes a whole word.
+bindkey '^?' backward-delete-word
+
 # allow comments at command line
 setopt interactivecomments
 
