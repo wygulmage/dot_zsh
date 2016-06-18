@@ -11,6 +11,8 @@ AUTO_MENU="true" # Cycle through completions.
 
 # Use vim key bindings
 bindkey -v
+# Set word boundaries to include '/'.
+WORDCHARS='*?.[]~=&;!#$%^(){}<>'
 
 # Backspace deletes a whole word.
 bindkey '^?' backward-delete-word
@@ -48,6 +50,7 @@ look () {
 alias l='look'
 alias ls='ls --color=auto -X -v'
 alias em='emacs -nw'
+alias rmempty='find -empty -type d -delete'
 
 # Setup pure
 setopt prompt_subst
