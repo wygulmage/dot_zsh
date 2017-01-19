@@ -19,9 +19,13 @@ bundles =
   , bundle "Tarrasch/zsh-mcd"
   , bundle "zsh-users/zsh-syntax-highlighting"
 --  , (bundle "zsh-users/zsh-history-substring-search") { sourcingStrategy = antigenSourcingStrategy }
+  , bundle "zsh-users/zaw"
   ]
 
-config = defaultConfig { plugins = bundles }
+config = defaultConfig
+  { plugins = bundles
+  , outputDirectory = "antigen-hs-out"
+  }
 
 main :: IO ()
 main = antigen config

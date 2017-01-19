@@ -1,4 +1,21 @@
-HISTFILE=~/Tmp/zsh_history
+# -*- mode: sh -*-
+if [ -d "/Ix/k" ] ; then
+    IX_K="/Ix/k"
+fi
+
+if [ -d "${IX_K}/Database" ] ; then
+    K_DATA="${IX_K}/Database"
+elif [ -d "${XDG_DATA_HOME}"] ; then
+    K_DATA="${XDG_DATA_HOME}"
+else
+    K_DATA="$HOME"
+fi
+
+if [ ! -d "${K_DATA}/zsh" ] ; then
+    mkdir ${K_DATA}/zsh
+fi
+
+HISTFILE=${K_DATA}/zsh/zsh_history
 HISTSIZE=21600
 SAVEHIST=43200
 HIST_IGNORE_ALL_DUPS="true" # When a command is entered, delete all previous instances of the command.
@@ -63,6 +80,9 @@ setopt prompt_subst
 # eval "$(fasd --init auto)"
 
 # Initialize antigen-hs
-ANTIGEN_HS_OUt="/Index/keith/Settings/zsh/antigen-hs"
-ANTIGEN_HS_MY="/Index/keith/Settings/zsh/MyAntigen.hs"
-source /Index/keith/Settings/zsh/antigen-hs/init.zsh
+IX_K=/Ix/k
+K_SETTINGS=${IX_K}/Settings
+export ANTIGEN_HS_OUT=${K_SETTINGS}/zsh/antigen-hs-out
+export ANTIGEN_HS_MY=${K_SETTINGS}/zsh/MyAntigen.hs
+source ${K_SETTINGS}/zsh/antigen-hs/init.zsh
+
