@@ -51,6 +51,7 @@ alias l='look'
 alias ls='ls --color=auto -X -v'
 alias em='emacs -nw'
 alias rmempty='find -empty -type d -delete'
+alias lock 'dm-tool lock'
 
 # Setup pure
 setopt prompt_subst
