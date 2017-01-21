@@ -78,9 +78,17 @@ setopt prompt_subst
 
 # Initialize fasd
 # eval "$(fasd --init auto)"
+if [ -d "${IX_K}/Managers/git/fasd" ] ; then
+    PATH="${PATH}:${IX_K}/Managers/git/fasd"
+    fasd_cache="${K_DATA}/zsh/fasd_cache"
+    if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ] ; then
+        fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install >| "$fasd_cache"
+    fi
+    . "$fasd_cache"
+    unset fasd_cache
+fi
 
 # Initialize antigen-hs
-IX_K=/Ix/k
 K_SETTINGS=${IX_K}/Settings
 export ANTIGEN_HS_OUT=${K_SETTINGS}/zsh/antigen-hs-out
 export ANTIGEN_HS_MY=${K_SETTINGS}/zsh/MyAntigen.hs
