@@ -70,7 +70,7 @@ alias em='emacs -nw'
 alias sm='(emacs > /dev/null 2>&1 &)'
 alias pm='(palemoon > /dev/null 2>&1 &)'
 alias ff='(firefox > /dev/null 2>&1 &)'
-alias fb2k='(playonlinux --run foobar2000 > /dev/null 2>&1 &)'
+alias fb='(playonlinux --run foobar2000 > /dev/null 2>&1 &)'
 alias rmempty='find -empty -type d -delete'
 alias lock='dm-tool lock'
 
