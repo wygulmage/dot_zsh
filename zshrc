@@ -58,6 +58,13 @@ colors
 #         for i; do look $i; done
 #     fi
 # }
+demux () {
+    # Extract the audio stream of a video.
+    # The first arg is the video's filename; the second arg is the name for the new audio file.
+    if [[ (( -f $1 ))]]
+    then; ffmpeg -i $1 -vn -acodec copy $2
+    fi
+}
 look () {
     if [[ (($# == 1 && -f $1 ))]]
     then; less $1
@@ -68,9 +75,15 @@ alias l='look'
 alias ls='ls --color=auto -X -v'
 alias em='emacs -nw'
 alias sm='(emacs > /dev/null 2>&1 &)'
-alias pm='(palemoon > /dev/null 2>&1 &)'
-alias ff='(firefox > /dev/null 2>&1 &)'
-alias fb='(playonlinux --run foobar2000 > /dev/null 2>&1 &)'
+# alias pm='(palemoon > /dev/null 2>&1 &)'
+pm () {
+    (palemoon $1 > /dev/null 2>&1 &)
+}
+# alias ff='(firefox > /dev/null 2>&1 &)'
+ff () {
+    (firefox $1 > /dev/null 2>&1 &)
+}
+alias fb='(playonlinux --run Foobar2000 > /dev/null 2>&1 &)'
 alias rmempty='find -empty -type d -delete'
 alias lock='dm-tool lock'
 
