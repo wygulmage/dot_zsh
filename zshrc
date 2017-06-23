@@ -73,8 +73,12 @@ look () {
 }
 alias l='look'
 alias ls='ls --color=auto -X -v'
+alias ran='ranger'
 alias em='emacs -nw'
-alias sm='(emacs > /dev/null 2>&1 &)'
+# alias sm='(emacs > /dev/null 2>&1 &)'
+sm () {
+    (emacs $1 > /dev/null 2>&1 &)
+}
 # alias pm='(palemoon > /dev/null 2>&1 &)'
 pm () {
     (palemoon $1 > /dev/null 2>&1 &)
