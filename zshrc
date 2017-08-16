@@ -90,6 +90,7 @@ ff () {
 alias fb='(playonlinux --run Foobar2000 > /dev/null 2>&1 &)'
 alias rmempty='find -empty -type d -delete'
 alias lock='dm-tool lock'
+alias pics='(feh --auto-rotate --auto-zoom --scale-down --image-bg=black --quiet > /dev/null 2>&1 &)'
 
 # Setup pure
 setopt prompt_subst
@@ -114,4 +115,3 @@ K_SETTINGS=${IX_K}/Settings
 export ANTIGEN_HS_OUT=${K_SETTINGS}/zsh/antigen-hs-out
 export ANTIGEN_HS_MY=${K_SETTINGS}/zsh/MyAntigen.hs
 source ${K_SETTINGS}/zsh/antigen-hs/init.zsh
-
