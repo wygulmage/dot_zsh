@@ -75,22 +75,27 @@ alias l='look'
 alias ls='ls --color=auto -X -v'
 alias ran='ranger'
 alias em='emacs -nw'
-# alias sm='(emacs > /dev/null 2>&1 &)'
-sm () {
-    (emacs $1 > /dev/null 2>&1 &)
-}
-# alias pm='(palemoon > /dev/null 2>&1 &)'
-pm () {
-    (palemoon $1 > /dev/null 2>&1 &)
-}
-# alias ff='(firefox > /dev/null 2>&1 &)'
-ff () {
-    (firefox $1 > /dev/null 2>&1 &)
-}
 alias fb='(playonlinux --run Foobar2000 > /dev/null 2>&1 &)'
 alias rmempty='find -empty -type d -delete'
 alias lock='dm-tool lock'
 alias pics='(feh --auto-rotate --auto-zoom --scale-down --image-bg=black --quiet > /dev/null 2>&1 &)'
+
+runGUI () {(eval $@ > /dev/null 2>&1 &)}
+
+sm () {runGUI emacs $@}
+pm () {runGUI palemoon $@}
+ff () {runGUI firefox $@}
+
+## Old command definitions
+# pm () {
+#     (palemoon $1 > /dev/null 2>&1 &)
+# }
+# sm () {
+#     (emacs $1 > /dev/null 2>&1 &)
+# }
+# ff () {
+#     (firefox $1 > /dev/null 2>&1 &)
+# }
 
 # Setup pure
 setopt prompt_subst
