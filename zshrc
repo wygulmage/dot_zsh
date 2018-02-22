@@ -37,27 +37,10 @@ bindkey '^?' backward-delete-word
 # allow comments at command line
 setopt interactivecomments
 
-
 autoload -U colors
 colors
 
-# Aliases:
-# look () {
-#     if [[ -d $1 ]]
-#     then
-#         ls -L -X --color=auto --group-directories-first $1
-#     else
-#         less $1
-#     fi
-# }
-# l () {
-#     if [[ $# == 0 ]]
-#     then
-#         look .
-#     else
-#         for i; do look $i; done
-#     fi
-# }
+# Commands
 demux () {
     # Extract the audio stream of a video.
     # The first arg is the video's filename; the second arg is the name for the new audio file.
@@ -80,22 +63,14 @@ alias rmempty='find -empty -type d -delete'
 alias lock='dm-tool lock'
 alias pics='(feh --auto-rotate --auto-zoom --scale-down --image-bg=black --quiet > /dev/null 2>&1 &)'
 
+# runGUI: pop off a GUI process that won't report back to the shell.
 runGUI () {(eval $@ > /dev/null 2>&1 &)}
 
 sm () {runGUI emacs $@}
 pm () {runGUI palemoon $@}
 ff () {runGUI firefox $@}
+tb () {runGUI thunderbird $@}
 
-## Old command definitions
-# pm () {
-#     (palemoon $1 > /dev/null 2>&1 &)
-# }
-# sm () {
-#     (emacs $1 > /dev/null 2>&1 &)
-# }
-# ff () {
-#     (firefox $1 > /dev/null 2>&1 &)
-# }
 
 # Setup pure
 setopt prompt_subst
