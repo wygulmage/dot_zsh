@@ -58,7 +58,6 @@ alias l='look'
 alias ls='ls --color=auto -X -v'
 alias ran='ranger'
 alias em='emacs -nw'
-alias fb='(playonlinux --run Foobar2000 > /dev/null 2>&1 &)'
 alias rmempty='find -empty -type d -delete'
 alias lock='dm-tool lock'
 alias pics='(feh --auto-rotate --auto-zoom --scale-down --image-bg=black --quiet > /dev/null 2>&1 &)'
@@ -70,6 +69,7 @@ sm () {runGUI emacs $@}
 pm () {runGUI palemoon $@}
 ff () {runGUI firefox $@}
 tb () {runGUI thunderbird $@}
+alias fb='runGUI playonlinux --run Foobar2000'
 
 
 # Setup pure
