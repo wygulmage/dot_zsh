@@ -68,8 +68,12 @@ runGUI () {(eval $@ > /dev/null 2>&1 &)}
 sm () {runGUI emacs $@}
 pm () {runGUI palemoon $@}
 ff () {runGUI firefox $@}
+ffp () {runGUI firefox --private $@}
 tb () {runGUI thunderbird $@}
+tix () {runGUI tixati $@}
+naut () {runGUI nautilus $@}
 alias fb='runGUI playonlinux --run Foobar2000'
+
 
 
 # Setup pure
