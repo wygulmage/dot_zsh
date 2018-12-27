@@ -67,6 +67,7 @@ runGUI () {(eval $@ > /dev/null 2>&1 &)}
 
 sm () {runGUI emacs $@}
 pm () {runGUI palemoon $@}
+pmp () {runGUI palemoon --private $@}
 ff () {runGUI firefox $@}
 ffp () {runGUI firefox --private $@}
 tb () {runGUI thunderbird $@}
